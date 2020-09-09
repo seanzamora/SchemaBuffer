@@ -14,6 +14,7 @@ class Movie {
     }
 }
 const Data = helpers_1.toUTF8Array('["home",[{"name":"test"}, {"name":"test2"}], 5, false, "2019-09-09"]');
+console.log(Data);
 const MovieSchema = new _1.SchemaBuffer(Movie, Data);
 const object = MovieSchema.rawValue();
 const index = MovieSchema.index(0);

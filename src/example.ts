@@ -13,7 +13,7 @@ class Movie {
 }
 
 const Data:number[] = toUTF8Array('["home",[{"name":"test"}, {"name":"test2"}], 5, false, "2019-09-09"]');
-
+console.log(Data)
 const MovieSchema = new SchemaBuffer(Movie, Data);
 
 const object = MovieSchema.rawValue();
