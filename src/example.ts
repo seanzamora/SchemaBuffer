@@ -1,5 +1,4 @@
 
-import { toUTF8Array } from './helpers';
 import { SchemaBuffer } from '.';
 
 class Movie {
@@ -12,12 +11,26 @@ class Movie {
     }
 }
 
-const Data:number[] = toUTF8Array('["home",[{"name":"test"}, {"name":"test2"}], 5, false, "2019-09-09"]');
-console.log(Data)
+//Data variable is equivalent to: ["home",[{"name":"test"}, {"name":"test2"}], 5, false, "2019-09-09"]
+const Data:number[] = [
+    91,  34, 104, 111, 109, 101,  34,  44,  91, 123, 34, 110,
+    97, 109, 101,  34,  58,  34, 116, 101, 115, 116, 34, 125,
+    44,  32, 123,  34, 110,  97, 109, 101,  34,  58, 34, 116,
+   101, 115, 116,  50,  34, 125,  93,  44,  32,  53, 44,  32,
+   102,  97, 108, 115, 101,  44,  32,  34,  50,  48, 49,  57,
+]
+
+
+//Instantiate SchemaBuffer pass both Schema class and Data.
 const MovieSchema = new SchemaBuffer(Movie, Data);
 
+//Get raw object value
 const object = MovieSchema.rawValue();
+
+//Get value with index
 const index = MovieSchema.index(0);
+
+//Get value with key
 const key = MovieSchema.get("name");
 
 console.log(object,{index, key})
