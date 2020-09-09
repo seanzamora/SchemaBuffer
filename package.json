@@ -1,0 +1,11 @@
+{
+  "name": "buffer.ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./dist/example.js"
+  },
+  "author": "Sean Zamora",
+  "license": "ISC"
+}
